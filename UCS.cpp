@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <list>
-#include <queue>          // std::priority_queue
+#include <queue>         
 #include <algorithm>
 #include <stdlib.h>
 using namespace std;
@@ -21,7 +21,7 @@ class mycomparison
 public:
 	bool operator() (pQ p1, pQ p2) const
 	{
-		//by default comparing the integer values
+	
 		return (p1>p2);
 	}
 };
@@ -49,9 +49,7 @@ void Graph::addEdge(int v, int w, int wt) {
 	adj[v].push_back(w);
 	wgt[v].push_back(wt);
 
-	//non-directed graph
-	// adj[w].push_back(v);
-	// wgt[w].push_back(wt);
+	
 }
 
 void Graph::UCF(int s, int t)
@@ -73,7 +71,7 @@ void Graph::UCF(int s, int t)
 		pQ currentPQ, tempPQ;
 		current = pq.top().path.back();
 		currentPQ = pq.top();
-		// cout<<current<<" "<<currentPQ.cost<<endl;
+	
 		pq.pop();
 		if(current == t)
 		{
@@ -127,18 +125,9 @@ int main()
 	cin>>vend;
 
 	g.UCF(vstart, vend);
-	system ("PAUSE");
+	
 	return 0;
 }
 
 
-/*
-g.addEdge(0, 1, 1);
-g.addEdge(0, 5, 12);
-g.addEdge(1, 2, 3);
-g.addEdge(1, 3, 1);
-g.addEdge(2, 4, 3);
-g.addEdge(3, 4, 1);
-g.addEdge(3, 5, 2);
-g.addEdge(4, 5, 3);
-*/
+

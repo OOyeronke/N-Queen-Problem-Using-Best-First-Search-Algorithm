@@ -4,7 +4,7 @@
 #define N 8
 using namespace std;
  
-/* print solution */
+
 void printSolution(int board[N][N])
 {
     for (int i = 0; i < N; i++)
@@ -15,7 +15,6 @@ void printSolution(int board[N][N])
     }
 }
  
-/* check if a queen can be placed on board[row][col]*/
 bool isSafe(int board[N][N], int row, int col)
 {
     int i, j;
@@ -39,7 +38,6 @@ bool isSafe(int board[N][N], int row, int col)
     return true;
 }
  
-/*solve N Queen problem */
 bool solveNQUtil(int board[N][N], int col)
 {
     if (col >= N)
@@ -57,7 +55,6 @@ bool solveNQUtil(int board[N][N], int col)
     return false;
 }
  
-/* solves the N Queen problem using Backtracking.*/
 bool solveNQ()
 {
     int board[N][N] = {0};
@@ -70,7 +67,7 @@ bool solveNQ()
     return true;
 }
  
-// Main
+
 int main()
 {
     solveNQ();
