@@ -1,23 +1,24 @@
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
-#define N 8
+
 using namespace std;
  
-
+   const int N = 4;
+   int i, j;
 void printSolution(int board[N][N])
 {
     for (int i = 0; i < N; i++)
     {
         for (int j = 0; j < N; j++)
-            cout<<board[i][j]<<"  ";
+            cout<< board[i][j]<<"  ";
         cout<<endl;
     }
 }
  
-bool isSafe(int board[N][N], int row, int col)
+bool IS(int board[N][N], int row, int col)
 {
-    int i, j;
+   
     for (i = 0; i < col; i++)
     {
         if (board[row][i])
@@ -44,7 +45,7 @@ bool solveNQUtil(int board[N][N], int col)
         return true;
     for (int i = 0; i < N; i++)
     {
-        if ( isSafe(board, i, col) )
+        if ( IS(board, i, col) )
         {
             board[i][col] = 1;
             if (solveNQUtil(board, col + 1) == true)

@@ -4,6 +4,7 @@
 #include <queue>         
 #include <algorithm>
 #include <stdlib.h>
+
 using namespace std;
 
 struct pQ
@@ -108,20 +109,26 @@ int main()
 {
 	int n,e, a, b, c;
 	int vstart = 0, vend = 0;
-	cout<<"No. of vertices:";
+	
+	cout<<"Number of Vertices:";
 	cin>>n;
-	cout<<"No. of edges:";
+	
+	cout<<"Number of Edges:";
 	cin>>e;
+	
 	Graph g(6);
+	
 	cout<<"Enter the list of edges in the format : v1 v2 weight:";
-	for(int i = 0; i<e; i++)
+	
+	for(int i = 0; i < e; i++)
 	{
-		cin>>a>>b>>c;
+		cin>> a >> b >> c;
 		g.addEdge(a, b, c);
 	}
-	cout<<"Enter the start vertex:";
+	cout<<"Enter the Start Vertex:";
 	cin>>vstart;
-	cout<<"Enter the end vertex:";
+	
+	cout<<"Enter the End Vertex:";
 	cin>>vend;
 
 	g.UCF(vstart, vend);
